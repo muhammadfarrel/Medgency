@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 09, 2020 at 08:39 AM
+-- Generation Time: Apr 09, 2020 at 03:30 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.32
 
@@ -42,7 +42,7 @@ CREATE TABLE `booking` (
 
 INSERT INTO `booking` (`id`, `id_user`, `id_mitra`, `id_dokter`, `keterangan`) VALUES
 (1, 1, 1, 1, 'suka sakit dada'),
-(2, 4, 1, 2, 'Asma');
+(3, 4, 1, 2, 'sakti help...');
 
 -- --------------------------------------------------------
 
@@ -55,16 +55,17 @@ CREATE TABLE `dokter` (
   `id_mitra` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `spesialis` varchar(100) NOT NULL,
-  `kerja` varchar(100) NOT NULL
+  `waktu` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `dokter`
 --
 
-INSERT INTO `dokter` (`id`, `id_mitra`, `nama`, `spesialis`, `kerja`) VALUES
-(1, 1, 'dr. Tirta', 'jantung', 'on'),
-(2, 1, 'dr. Farrel', 'Paru-Paru', 'on');
+INSERT INTO `dokter` (`id`, `id_mitra`, `nama`, `spesialis`, `waktu`) VALUES
+(1, 1, 'dr. Tirta', 'jantung', '9.00 AM - 5.00 PM'),
+(2, 1, 'dr. Farrel', 'Paru-Paru', '5.00 PM - 10.00 PM'),
+(5, 1, 'arinda', 'Anak & Kandungan', 'kapan pun bisa');
 
 -- --------------------------------------------------------
 
@@ -77,15 +78,16 @@ CREATE TABLE `mitra` (
   `nama` varchar(100) NOT NULL,
   `address` varchar(100) NOT NULL,
   `username` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL,
+  `jenis` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `mitra`
 --
 
-INSERT INTO `mitra` (`id`, `nama`, `address`, `username`, `password`) VALUES
-(1, 'Siloam', 'bandung', 'siloam', '123');
+INSERT INTO `mitra` (`id`, `nama`, `address`, `username`, `password`, `jenis`) VALUES
+(1, 'Siloam', 'bandung', 'siloam', '123', 'rumah sakit');
 
 -- --------------------------------------------------------
 
@@ -152,19 +154,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `dokter`
 --
 ALTER TABLE `dokter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `mitra`
 --
 ALTER TABLE `mitra`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
