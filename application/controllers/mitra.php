@@ -12,12 +12,19 @@ class  mitra extends CI_Controller {
     }
 	public function index()
 	{
-        $this->load->view('m_login');
+        $this->load->model('m_mitra');
+        $dat = $this->session->userdata('mitra');
+        $pas['pasien'] = $this->m_mitra->getPasien($dat['id']);
+		if ($this->input->post('keyword')) {
+			$pas['pasien'] = $this->m_mitra->cariDataPasien($dat['id']);
+		}
+        $this->load->view('v_mitra', $pas);
     }
     
     public function login(){
-
         $this->load->model('m_mitra');
+        $this->form_validation->set_rules('username','Username', 'required');
+        $this->form_validation->set_rules('password','Password', 'required');
         $username = $this->input->post('username');
         $password = $this->input->post('password');
         $where = array(
@@ -38,6 +45,54 @@ class  mitra extends CI_Controller {
             $this->load->view('m_login');
         }
     }
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('user', 'refresh');
+    }
+
+    public function hapus($id)
+	{
+		$this->m_mitra->hapusBooking($id);
+		redirect('mitra/index', 'refresh');
+    }
     
+    public function showDoctor()
+	{
+        $dat = $this->session->userdata('mitra');
+        $data['dokter'] = $this->m_mitra->getDokter($dat['id']);
+        $this->load->view('v_dokter', $data);
+    }
+
+    public function hapusDokter($id)
+	{
+        if($this->m_mitra->getBooking($id) > 0){
+            $this->session->set_flashdata('flash');
+            echo '<script>alert("Ada Pasien yang Membooking Dokter");</script>';
+        }
+        else{
+            $this->m_mitra->deleteDokter($id);
+            redirect('mitra/showDoctor', 'refresh');
+        }
+        redirect('mitra/showDoctor', 'refresh');
+    }
+
+    public function tambahDokter(){
+		$this->load->view('tambah');
+		$this->form_validation->set_rules("nama", "nama", 'required');
+		$this->form_validation->set_rules("waktu", "waktu", 'required');
+		$this->form_validation->set_rules("spesialis", "spesialis", 'required');
+		//conditon in form_validation, if user input form = false, then load page "tambah" again
+		if($this->form_validation->run()){
+			$this->m_mitra->tambahDokter();
+			redirect('mitra/showDoctor', 'refresh');
+		}
+    }
+    public function cariDoctor(){
+        $keyword = $this->input->post('keyword_dokter');
+        $dat = $this->session->userdata('mitra');
+        $data['dokter'] = $this->m_mitra->cariDokter($dat['id'], $keyword);
+        $this->load->view('v_dokter', $data);
+    }
 }
 ?>
