@@ -78,8 +78,8 @@ class  User extends CI_Controller {
         $where = array(
             'username' => $username,
             'password' => $password
-            );
-        $cek = $this->m_user->login("user",$where)->num_rows();
+			);
+		$cek = $this->m_user->login("user",$where)->num_rows();
         if($cek > 0){
 			$dat = $this->m_user->cari_id($username)->row_array();
 			if($dat['role'] == 1){
@@ -89,6 +89,7 @@ class  User extends CI_Controller {
 				);
 				$this->session->set_userdata('user',$data);
 				$this->load->view('header');
+				$this->load->view('v_home_user');
 			}
             else{
 				#rencana ke admin

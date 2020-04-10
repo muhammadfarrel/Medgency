@@ -88,19 +88,6 @@
     <div class="row mt-5">
         <div class="col">
             <h3 class="text-center">Daftar Dokter</h3>
-            <div class="container">
-            <?php if ($this->session->flashdata('flash')) : ?>
-            <div class="row mt-3">
-                <div class="col-md-6">
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        Data Dokter <strong>Tidak Bisa Dihapus</strong>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <?php endif; ?>
 
             <table class="table mt-5">
                 <thead>

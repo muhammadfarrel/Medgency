@@ -238,7 +238,7 @@
 		</div>
 		<div class="login-content">
 			<!-- ini form nya -->
-			<form action="#" method="post">
+			<form action="<?= site_url('user/login') ?>" method="post">
 				<img src="<?php echo base_url()?>assets/img/avatar.svg">
 				<h2 class="title">Medgency</h2>
 				<h3 class="title">Login</h3>
@@ -248,7 +248,7 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Username</h5>
-           		   		<input type="text" class="input" required>
+           		   		<input type="text" class="input" name = "username" required>
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -257,12 +257,13 @@
            		   </div>
            		   <div class="div">
            		    	<h5>Password</h5>
-           		    	<input type="password" class="input" required>
+           		    	<input type="password" class="input" name = "password" required>
             	   </div>
 				</div>
 				<!-- <div><a href="#">Forgot Password?</a></div> -->
-				<div><a href="#">Don't have an account ?</a></div>
-				
+				<div><a href="<?= site_url('user/regis') ?>">Don't have an account ?</a></div>
+				<div><a href="<?= site_url('mitra/login') ?>">Mitra Login ?</a></div>
+
             	<input type="submit" class="btn" value="Login">
             </form>
         </div>

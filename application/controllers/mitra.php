@@ -14,6 +14,9 @@ class  mitra extends CI_Controller {
 	{
         $this->load->model('m_mitra');
         $dat = $this->session->userdata('mitra');
+        if(empty($dat)){
+            $this->load->view('m_login');
+        }
         $pas['pasien'] = $this->m_mitra->getPasien($dat['id']);
 		if ($this->input->post('keyword')) {
 			$pas['pasien'] = $this->m_mitra->cariDataPasien($dat['id']);
@@ -23,6 +26,7 @@ class  mitra extends CI_Controller {
     
     public function login(){
         $this->load->model('m_mitra');
+        
         $this->form_validation->set_rules('username','Username', 'required');
         $this->form_validation->set_rules('password','Password', 'required');
         $username = $this->input->post('username');
@@ -37,7 +41,7 @@ class  mitra extends CI_Controller {
 			$data = array(
 				'nama' => $username,
 				'id' => $dat['id']
-			);
+            );
             $this->session->set_userdata('mitra',$data);
             $pas['pasien'] = $this->m_mitra->getPasien($data['id']);
 			$this->load->view('v_mitra', $pas);
