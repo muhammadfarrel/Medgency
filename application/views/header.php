@@ -41,34 +41,6 @@
       }
       /* navbar end */
 
-      /* jumbotron start*/
-      .jumbotron{
-          background-image: url('<?php echo base_url()?>assets/img/jumbotron-bg.jpg');
-          background-size: cover;
-          height:100vh;
-          /* min-height:500px;
-          max-height:1080px; */
-          margin-top: -75px;
-          margin-bottom: -50px;
-          text-align: center;
-          overflow: hidden;
-          /* position: relative; */
-      }
-
-      .jumbotron .display-4, .jumbotron .display-7{
-          color: white;
-          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-      }
-
-      .jumbotron .display-4{
-          margin-top: 180px;
-      }
-
-      .btn{
-          margin-top: 30px;
-          border-radius: 50px;
-      }
-      /* jumbotron end */
     </style>
 
     <title>Medgency!</title>
@@ -101,17 +73,6 @@
         </div>
       </nav>
       <!-- akhir navbar -->
-
-      <!-- ini jumbotron -->
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4"><span>Welcome</span> to <span>MedGency</span></h1>
-          <h6 class="display-7">Medical <span>Service</span> You Can <span>Rely</span> On</h6>
-          <a href="#" class="btn btn-primary">Get Started</a>
-        </div>
-      </div>
-      <!-- akhir jumbotron -->
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
