@@ -64,6 +64,12 @@
           font-size: 50px;
       }
 
+      .text-aye h1{
+        margin-top : 9px;
+        font-size: 50px;
+        margin-bottom: 50px;
+      }
+
       .partners-space{
           margin-bottom: 50px;
       }
@@ -141,7 +147,10 @@
         <span class="sr-only">Next</span>
       </a>
     </div>  
-
+    <?php $data = $this->session->userdata('user'); ?>
+    <div class="row justify-content-center text-aye">
+      <h1>Hi <span><?php echo $data['nama'] ?></span> Welcome to Medgency</h1>
+    </div>
     <!-- container -->
     <div class="container">
       <!-- info-panel -->
