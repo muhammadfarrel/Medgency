@@ -62,7 +62,7 @@ class  User extends CI_Controller {
 			if($cek>0){
 				echo '<script>alert("Username Already Used, let`s try another one!");</script>';
 			}
-			//$this->session->set_flashdata('message','<div class="alert alert-success" role="alert"> Your account has been created, Please login</div>');
+			// $this->session->set_flashdata('message','<div class="alert alert-success" role="alert"> Your account has been created, Please login</div>');
 			else{
 				$this->m_user->insertUser($data);
 				redirect('user', 'refresh');
