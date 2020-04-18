@@ -26,6 +26,7 @@ class  mitra extends CI_Controller {
     
     public function login(){
         $this->load->model('m_mitra');
+        
         $this->form_validation->set_rules('username','Username', 'required');
         $this->form_validation->set_rules('password','Password', 'required');
         $username = $this->input->post('username');
@@ -97,5 +98,31 @@ class  mitra extends CI_Controller {
         $data['dokter'] = $this->m_mitra->cariDokter($dat['id'], $keyword);
         $this->load->view('v_dokter', $data);
     }
+    public function profile(){
+        $dat = $this->session->userdata('mitra');
+        $data['mitra'] = $this->m_mitra->id_mitra($dat['nama'])->row_array();
+        $this->load->view('mitra_profile', $data);
+    }
+    public function do_upload()
+        {
+            $img = $_FILES['img'];
+            if($img != ''){}    
+                $config['upload_path']          =  './assets/uploads';//isi dengan nama folder temoat menyimpan gambar
+                $config['allowed_types']        =  'gif|jpg|png|jfif';//isi dengan format/tipe gambar yang diterima
+
+                $this->load->library('upload', $config);
+
+                //lengkapi kondisi berikut
+                if ( ! $this->upload->do_upload('img'))
+                {
+                        die();
+                }
+                else
+                {
+                        $img = $this->upload->data('file_name');
+                        $this->m_mitra->photo($img);
+			            redirect('mitra/profile');
+                }
+        }
 }
 ?>
