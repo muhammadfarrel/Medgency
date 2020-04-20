@@ -247,6 +247,15 @@
            		   		<input type="text" class="input" name="username" required>
            		   </div>
 				</div>
+				<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Name</h5>
+           		   		<input type="text" class="input" name="name" required>
+           		   </div>
+				</div>
 				<div class="input-div email">
 					<div class="i"> 
 						 <i class="fas fa-envelope"></i>

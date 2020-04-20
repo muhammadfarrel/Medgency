@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
         
-        .container{
-            margin-top: 100px;
+        .contain{
+            margin-top: 50px;
+            margin-bottom: 20px;
         }
 
         .profile-card{
@@ -45,19 +46,20 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="contain">
         <div class="profile-card">
             <div class="image-container">
-                <img src="personal.png">
+                <img src="<?php echo base_url()?>assets/img/personal.png">
                 <div class="title">
-                    <h2>Azizmap</h2>
+                    <h2><?php echo $profile['nama'] ?></h2>
                 </div>
             </div>
+            <?php $dat = $this->session->userdata('user'); ?>
             <div class="main-container">
-                <p><i class="fa fa-user info"></i>muhammad aziz</p>
-                <p><i class="fa fa-envelope info"></i>mapmapmap@gmail.com</p>
-                <p><i class="fa fa-home info"></i>permata buah batu, bojongsoang</p>
-                <p><i class="fa fa-phone info"></i>08652xxxxx</p>
+                <p><i class="fa fa-user info"></i><?php echo $profile['username'] ?></p>
+                <p><i class="fa fa-envelope info"></i><?php echo $profile['email'] ?></p>
+                <p><i class="fa fa-home info"></i><?php echo $profile['address'] ?></p>
+                <p><i class="fa fa-phone info"></i><?php echo $profile['phonenumber'] ?></p>
                 <div class="text-center">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal">edit profile</button>
                     <!-- modal -->
@@ -69,21 +71,22 @@
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                                 </div>
                                 <div class="modal-body mx-3">
-                                    <form id="editForm" method="POST">
+                                    <form id="editForm" action="<?php site_url('user/editProfile') ?>" method="POST">
+                                        <input type="text" name="id" value="<?= $dat['id'] ?>" hidden>
                                         <div class="form-group">
                                             <i class="fa fa-envelope info"></i>
                                             <label>Email</label>
-                                            <input type="email" class="form-control" id="email" required>
+                                            <input type="email" class="form-control" id="email" name = "email" value = "<?php echo $profile['email'] ?>" required>
                                         </div>
                                         <div class="form-group">
                                             <i class="fa fa-home info"></i>
                                             <label>Address</label>
-                                            <input type="email" class="form-control" id="email" required>
+                                            <input type="text" class="form-control" id="email" name = "address" value = "<?php echo $profile['address'] ?>" required>
                                         </div>
                                         <div class="form-group">
                                             <i class="fa fa-phone info"></i>
                                             <label>Phone Number</label>
-                                            <input type="email" class="form-control" id="email" required>
+                                            <input type="text" class="form-control" id="email" name = "phonenumber" value="<?php echo $profile['phonenumber'] ?>" required>
                                         </div>
                                         <div class="text-center"><button type="submit" class="btn btn-primary ">Edit Profile</button></div>
                                         

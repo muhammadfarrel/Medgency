@@ -40,6 +40,7 @@ class  User extends CI_Controller {
 	public function home(){
 		$this->load->view('header');
 		$this->load->view('v_home_user');
+		$this->load->view('footer');
 	}
 
 	public function regis(){
@@ -61,6 +62,7 @@ class  User extends CI_Controller {
 
 			$data = [
 				'username' => $this->input->post('username'),
+				'name' => $this->input->post('name'),
 				'email' => $this->input->post('email'),
 				'password' => $this->input->post('password'),
 				'phonenumber' => $this->input->post('phonenumber'),
@@ -100,6 +102,7 @@ class  User extends CI_Controller {
 				$this->session->set_userdata('user',$data);
 				$this->load->view('header');
 				$this->load->view('v_home_user');
+				$this->load->view('footer');
 			}
             else{
 				#rencana ke admin
@@ -120,6 +123,7 @@ class  User extends CI_Controller {
 		$data['mitra'] = $this->m_user->liatmitra_rs();
 		$this->load->view('header');
 		$this->load->view('show_mitra', $data);
+		$this->load->view('footer');
 	}
 
 	public function showMitra_c()
@@ -127,11 +131,13 @@ class  User extends CI_Controller {
 		$data['mitra'] = $this->m_user->liatmitra_c();
 		$this->load->view('header');
 		$this->load->view('show_mitra', $data);
+		$this->load->view('footer');
 	}
 	public function dokterMitra($id){
 		$data['dokter'] = $this->m_user->dataDokter($id);
 		$this->load->view('header');
 		$this->load->view('table_dokter', $data);
+		$this->load->view('footer');
 	}
 	public function prebooking($id){
 		$data['dokter'] = $this->m_user->showPreBook($id);
@@ -147,6 +153,27 @@ class  User extends CI_Controller {
 			$this->m_user->tambahBooking();
 			redirect('user/home');
 		}
+	}
+	public function liatprofile(){
+		$data = $this->session->userdata('user');
+		$data['profile'] = $this->m_user->cari_id($data['nama'])->row_array();
+		$this->load->view('header');
+		$this->load->view('myprofile',$data);
+		$this->load->view('footer');
+	}
+	public function editProfile(){
+		$dat = [
+			'id' => $this->input->post('id'),
+			'email' => $this->input->post('email'),
+			'hp' => $this->input->post('phonenumber'),
+			'address' => $this->input->post('address')
+		];
+		$this->m_user->edit($dat);
+		$dataa = $this->session->userdata('user');
+		$data['profile'] = $this->m_user->cari_id($dataa['nama'])->row_array();
+		$this->load->view('header');
+		$this->load->view('myprofile',$data);
+		$this->load->view('footer');
 	}
 }
 ?>
