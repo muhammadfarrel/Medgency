@@ -60,13 +60,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="<?= site_url('mitra') ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="<?php site_url('') ?>">Show Dokter</a>
+                <a class="nav-link" href="http://localhost/Medgency/index.php/mitra/showDoctor">Show Dokter</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
+                <a class="nav-link" href="<?= site_url('mitra/logout') ?>">Logout</a>
                 </li>
             </ul>
             </div>
@@ -74,7 +74,7 @@
     </nav>
 <div class="row mt-3">
         <div class="col md-6">
-            <form action="" method="post">
+            <form action="<?= site_url('mitra') ?>" method="post">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Cari data Booking ... " name="keyword">
                     <div class="input-group-append">
@@ -111,7 +111,7 @@
                         <td class="text-center"><?= $pas['keterangan']; ?></td>
                         <td class="text-center"><?= $pas['nama']; ?></td>
                         <td class="text-center">
-                            <a href="<?= base_url(); ?>mitra/hapus/<?= $pas['id'] ?>" class="badge badge-danger float-center" onclick="return confirm('Apakah Pasien telah konsultasi?');" ?>Selesai</a>
+                            <a href="<?= site_url(); ?>/mitra/hapus/<?= $pas['id'] ?>" class="badge badge-danger float-center" onclick="return confirm('Apakah Pasien telah konsultasi?');" ?>Selesai</a>
                         </td>
                     </tr>
                     <?php endforeach ?>

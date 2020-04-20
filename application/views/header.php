@@ -16,8 +16,8 @@
       /* navbar start*/
       .navbar-brand,.nav-link{
           font-family: Montserrat;
-          color: white !important;
-          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+          color: black !important;
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
           display: inline-block;
       }
 
@@ -38,6 +38,9 @@
           margin: auto;
           padding-bottom: 3px;
           margin-bottom: -8px;
+      }
+      .navbar{
+        color: black;
       }
       /* navbar end */
 
@@ -63,10 +66,10 @@
                 <a class="nav-link" href="#">Features</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="<?= site_url('user/logout') ?>">Logout</a>
                 </li>
             </ul>
             </div>

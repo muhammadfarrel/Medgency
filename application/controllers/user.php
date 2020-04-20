@@ -21,15 +21,25 @@ class  User extends CI_Controller {
     function __construct(){
         parent::__construct();
         //LOAD MODEL "M_USER"
-        $this->load->model('m_user');
+		$this->load->model('m_user');
+		$this->load->model('m_mitra');
         //LOAD LIBRARY FORM VALIDATION
         $this->load->library('form_validation');
 
     }
 	public function index()
 	{
-        
-        $this->load->view('login');
+        // $this->load->model('m_user');
+        // $dat = $this->session->userdata('user');
+        // if(empty($dat)){
+            $this->load->view('login');
+        // }
+		// $this->load->view('header');
+		// $this->load->view('v_home_user');
+	}
+	public function home(){
+		$this->load->view('header');
+		$this->load->view('v_home_user');
 	}
 
 	public function regis(){
@@ -62,7 +72,7 @@ class  User extends CI_Controller {
 			if($cek>0){
 				echo '<script>alert("Username Already Used, let`s try another one!");</script>';
 			}
-			//$this->session->set_flashdata('message','<div class="alert alert-success" role="alert"> Your account has been created, Please login</div>');
+			// $this->session->set_flashdata('message','<div class="alert alert-success" role="alert"> Your account has been created, Please login</div>');
 			else{
 				$this->m_user->insertUser($data);
 				redirect('user', 'refresh');
@@ -78,8 +88,8 @@ class  User extends CI_Controller {
         $where = array(
             'username' => $username,
             'password' => $password
-            );
-        $cek = $this->m_user->login("user",$where)->num_rows();
+			);
+		$cek = $this->m_user->login("user",$where)->num_rows();
         if($cek > 0){
 			$dat = $this->m_user->cari_id($username)->row_array();
 			if($dat['role'] == 1){
@@ -89,6 +99,7 @@ class  User extends CI_Controller {
 				);
 				$this->session->set_userdata('user',$data);
 				$this->load->view('header');
+				$this->load->view('v_home_user');
 			}
             else{
 				#rencana ke admin
@@ -102,6 +113,40 @@ class  User extends CI_Controller {
     {
         $this->session->sess_destroy();
         redirect('user', 'refresh');
-    }
+	}
+	
+	public function showMitra_rs()
+	{
+		$data['mitra'] = $this->m_user->liatmitra_rs();
+		$this->load->view('header');
+		$this->load->view('show_mitra', $data);
+	}
+
+	public function showMitra_c()
+	{
+		$data['mitra'] = $this->m_user->liatmitra_c();
+		$this->load->view('header');
+		$this->load->view('show_mitra', $data);
+	}
+	public function dokterMitra($id){
+		$data['dokter'] = $this->m_user->dataDokter($id);
+		$this->load->view('header');
+		$this->load->view('table_dokter', $data);
+	}
+	public function prebooking($id){
+		$data['dokter'] = $this->m_user->showPreBook($id);
+		$this->load->view('header');
+		$this->load->view('booking', $data);
+
+		$this->form_validation->set_rules('keterangan','keterangan', 'required');
+
+		if($this->form_validation->run() == false){
+
+		}
+		else{
+			$this->m_user->tambahBooking();
+			redirect('user/home');
+		}
+	}
 }
 ?>

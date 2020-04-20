@@ -62,5 +62,15 @@ class M_mitra extends CI_model
         $query = "SELECT * FROM `dokter` WHERE `id_mitra` = '$id' AND (`nama` LIKE '%$keyword%' OR `spesialis` LIKE '%$keyword%' OR `waktu` LIKE '%$keyword%')";
         return $this->db->query($query)->result_array();
     }
+
+    public function photo($url)
+    {
+        $dat = $this->session->userdata('mitra');
+		$data = [
+            "username" => $dat['nama'],
+			"url" => $url
+		];
+		$this->db->insert('photo', $data);
+    }
 }
 ?>

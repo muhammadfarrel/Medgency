@@ -244,7 +244,7 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Username</h5>
-           		   		<input type="text" class="input" required>
+           		   		<input type="text" class="input" name="username" required>
            		   </div>
 				</div>
 				<div class="input-div email">
@@ -253,7 +253,7 @@
 					</div>
 					<div class="div">
 						 <h5>Email</h5>
-						 <input type="email" class="input" required>
+						 <input type="email" class="input" name="email" required>
 				 	</div>
 			  	</div>   
            		<div class="input-div pass">
@@ -262,7 +262,7 @@
            		   </div>
            		   <div class="div">
            		    	<h5>Password</h5>
-           		    	<input type="password" class="input" required>
+           		    	<input type="password" class="input" name="password" required>
             	   </div>
 				</div>
 				<div class="input-div phonr">
@@ -271,7 +271,7 @@
 					</div>
 					<div class="div">
 						 <h5>Phone Number</h5>
-						 <input type="tel" class="input" required>
+						 <input type="tel" class="input" name = "phonenumber" required>
 					</div>
 				</div>
 				<div class="input-div address">
@@ -280,7 +280,7 @@
 					</div>
 					<div class="div">
 						 <h5>Address</h5>
-						 <input type="text" class="input" required>
+						 <input type="text" class="input" name= "address" required>
 					</div>
 				</div>
 				

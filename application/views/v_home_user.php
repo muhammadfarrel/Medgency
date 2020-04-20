@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -13,13 +16,13 @@
 
     <!-- style css nya -->
     <style type="text/css">
-      .carousel-slide{
+      #carousel-container{
           margin-bottom: 50px;
       }
 
       /* carousel dekstop */
       @media (min-width: 992px) {
-          .carousel-slide{
+          #carousel-container{
               margin-top: 15px;
               margin-left: 50px;
               margin-right: 50px;
@@ -61,6 +64,12 @@
           font-size: 50px;
       }
 
+      .text-aye h1{
+        margin-top : 9px;
+        font-size: 50px;
+        margin-bottom: 50px;
+      }
+
       .partners-space{
           margin-bottom: 50px;
       }
@@ -100,7 +109,7 @@
   <body>
 
     <!-- carousel -->
-    <div id="carousel-container" class="carousel-slide" data-ride="carousel">
+    <div id="carousel-container" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -138,7 +147,10 @@
         <span class="sr-only">Next</span>
       </a>
     </div>  
-
+    <?php $data = $this->session->userdata('user'); ?>
+    <div class="row justify-content-center text-aye">
+      <h1>Hi <span><?php echo $data['nama'] ?></span> Welcome to Medgency</h1>
+    </div>
     <!-- container -->
     <div class="container">
       <!-- info-panel -->
@@ -146,17 +158,17 @@
         <div class="col-10 info-panel">
           <div class="row">
             <div class="col-lg">
-              <img src="img/time.svg" alt="time" class="float-left">
+              <img src="<?php echo base_url()?>assets/img/time.svg" alt="time" class="float-left">
               <h4>24 Hours</h4>
               <p>buka terus bos</p>
             </div>
             <div class="col-lg">
-              <img src="img/place.svg" alt="place" class="float-left">
+              <img src="<?php echo base_url()?>assets/img/place.svg" alt="place" class="float-left">
               <h4>Everywhere</h4>
               <p>dimana aje mangg aku mauuuuuu</p>
             </div>
             <div class="col-lg">
-              <img src="img/easy.svg" alt="easy" class="float-left">
+              <img src="<?php echo base_url()?>assets/img/easy.svg" alt="easy" class="float-left">
               <h4>Easy to Use</h4>
               <p>mudah banget bor tinggal klik klik ences</p>
             </div>
