@@ -28,7 +28,7 @@
     <div class="container mt-5 mb-3">
         <div class="col">
             <h3 class="text-center">Daftar Dokter</h3>
-
+            
             <table class="table mt-5 table-striped table-hover datadokter" style="width: 100%">
                 <thead>
                     <tr>
@@ -55,7 +55,7 @@
                 <tfoot>
                 </tfoot>
             </table>
-    
+
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

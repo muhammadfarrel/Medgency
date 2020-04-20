@@ -137,7 +137,7 @@ class  User extends CI_Controller {
 		$data['dokter'] = $this->m_user->dataDokter($id);
 		$this->load->view('header');
 		$this->load->view('table_dokter', $data);
-		$this->load->view('footer');
+		// $this->load->view('footer');
 	}
 	public function prebooking($id){
 		$data['dokter'] = $this->m_user->showPreBook($id);
@@ -154,6 +154,19 @@ class  User extends CI_Controller {
 			redirect('user/home');
 		}
 	}
+
+	public function testbook(){
+		$this->form_validation->set_rules('keterangan','keterangan', 'required');
+
+		if($this->form_validation->run() == false){
+
+		}
+		else{
+			$this->m_user->tambahBooking();
+			redirect('user/home');
+		}
+	}
+
 	public function liatprofile(){
 		$data = $this->session->userdata('user');
 		$data['profile'] = $this->m_user->cari_id($data['nama'])->row_array();
