@@ -78,7 +78,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-header text-center">
-                    Form Tambah Data Mahasiswa
+                    Form Tambah Data Dokter
                 </div>
                 <div class="card-body">
                     <form action="" method="post">
@@ -91,7 +91,7 @@
                             <input type="text" class="form-control" id="nim" name="waktu">
                         </div>
                         <div class="form-group">
-                            <label for="jurusan">Jurusan</label>
+                            <label for="jurusan">Spesialis</label>
                             <select class="form-control" id="jurusan" name="spesialis">
                                 <option value="Paru-paru">Paru-Paru</option>
                                 <option value="Jantung">Jantung</option>

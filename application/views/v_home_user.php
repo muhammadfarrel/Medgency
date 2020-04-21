@@ -147,7 +147,8 @@
         <span class="sr-only">Next</span>
       </a>
     </div>  
-    <?php $data = $this->session->userdata('user'); ?>
+    <?php $dat = $this->session->userdata('user');
+          $data = $this->m_user->cari_id($dat['nama'])->row_array() ?>
     <div class="row justify-content-center text-aye">
       <h1>Hi <span><?php echo $data['nama'] ?></span> Welcome to Medgency</h1>
     </div>
@@ -195,7 +196,7 @@
         <div class="col-lg-5">
           <h3>HOSPITAL</h3>
           <p>disini pusat pengobatan lengkap mang, besar juge weh dan tenaga medisnya lumayan banyak. ada ambulance juga wkwk</p>
-          <a href="" class="btn btn-primary">list selengkapnya</a>
+          <a href="<?= site_url('user/showMitra_rs') ?>" class="btn btn-primary">list selengkapnya</a>
         </div>
       </div>
 
@@ -206,7 +207,7 @@
         <div class="col-lg-5">
           <h3>CLINIC</h3>
           <p>ini lebih kecil tempatnya bor, tenaga medis nay dikit, tapi biasanya ada dimana-mana heheh</p>
-          <a href="" class="btn btn-primary">list selengkapnya</a>
+          <a href="<?= site_url('user/showMitra_c') ?>" class="btn btn-primary">list selengkapnya</a>
         </div>
       </div>
     </div>

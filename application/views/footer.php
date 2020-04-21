@@ -50,7 +50,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-lg-0">
                     <h6 class="text-uppercase text-muted font-weight-bold mb-4">MedGency Address</h6>
-                    <p class="text-primary mb-4">Permata Buah Batu, Bojongsoang, Kabupaten Bandung.</p>
+                    <a class="text-primary" href="https://www.google.com/maps/place/6°58'26.9"S+107°38'23.4"E/@-6.9741367,107.6392868,19z/data=!3m1!4b1!4m14!1m7!3m6!1s0x2e68e9b3dbad8a1f:0x89ae734cc4aba80b!2sJl.+Komp.+Permata+Buah+Batu,+Lengkong,+Kec.+Bojongsoang,+Bandung,+Jawa+Barat+40287!3b1!8m2!3d-6.9732321!4d107.6383576!3m5!1s0x0:0x0!7e2!8m2!3d-6.9741382!4d107.6398336">
+                        Permata Buah Batu, Bojongsoang, Kabupaten Bandung.
+                    </a>
                 </div>
             </div>
         </div>

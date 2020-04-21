@@ -46,5 +46,13 @@ class M_user extends CI_model
 		];
 		$this->db->insert('booking', $data);
     }
+    public function edit($data){
+        $id = $data['id'];
+        $email = $data['email'];
+        $phone = $data['hp'];
+        $address = $data['address'];
+        $query = "UPDATE `user` SET `email` = '$email', `phonenumber` = '$phone', `address` = '$address' WHERE `user`.`id` = '$id'";
+        $this->db->query($query);
+    }
 }
 ?>

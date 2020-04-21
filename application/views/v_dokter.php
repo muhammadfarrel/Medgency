@@ -43,6 +43,7 @@
       body{
           margin-left: 10%;
           margin-right: 10%;
+          margin-bottom: 50px;
       }
     </style>
 
