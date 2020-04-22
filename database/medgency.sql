@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 20, 2020 at 09:43 AM
+-- Generation Time: Apr 22, 2020 at 07:58 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.32
 
@@ -25,6 +25,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `about`
+--
+
+CREATE TABLE `about` (
+  `id` int(11) NOT NULL,
+  `data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `about`
+--
+
+INSERT INTO `about` (`id`, `data`) VALUES
+(1, '{\"nama\":\"Muhammad Aziz Pratama\",\"ket\" : \"Anggota 1\",\"deskripsi\":\"No Hp 085273309914 Bengkulu, Bengkulu\",\"foto\":\"\"}'),
+(2, ' {\"nama\":\"Muhammad Farrel\",\"ket\" : \"KETUA\",\"deskripsi\":\"No Hp : 08114551997 Balikpapan, Kalimantan Timur\",\"foto\":\"\"}'),
+(3, ' {\"nama\":\"Haris  Subekti\",\"ket\" : \"Anggota 2\",\"deskripsi\":\"No Hp : 082219739266 Buah Batu, Bandung, Jawa Barat\",\"foto\":\"\"}'),
+(4, '{\"nama\":\"Daffashiddiq Nur Awan\",\"ket\" : \"Anggota 3\",\"deskripsi\":\"No Hp : 081239471472 Jakarta Timur, DKI Jakarta\",\"foto\":\"\"}'),
+(5, '{\"nama\":\"Huda Rizky Prasetyo\",\"ket\" : \"Anggota 4\",\"deskripsi\":\"No Hp : 08975010636 Purworejo, Jawa Tengah\",\"foto\":\"\"}');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `booking`
 --
 
@@ -42,11 +64,9 @@ CREATE TABLE `booking` (
 
 INSERT INTO `booking` (`id`, `id_user`, `id_mitra`, `id_dokter`, `keterangan`) VALUES
 (1, 1, 1, 1, 'suka sakit dada'),
-(3, 4, 1, 2, 'sakti help...'),
-(4, 2, 1, 1, 'oyee'),
-(5, 2, 1, 1, 'sakit hati dok'),
 (11, 4, 1, 5, 'oyee'),
-(12, 2, 1, 1, 'oy masuk dong');
+(12, 2, 1, 1, 'oy masuk dong'),
+(13, 5, 1, 5, 'yee');
 
 -- --------------------------------------------------------
 
@@ -122,6 +142,27 @@ INSERT INTO `photo` (`id`, `username`, `url`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `riwayat`
+--
+
+CREATE TABLE `riwayat` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `mitra` varchar(100) NOT NULL,
+  `dokter` varchar(100) NOT NULL,
+  `keterangan` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `riwayat`
+--
+
+INSERT INTO `riwayat` (`id`, `id_user`, `mitra`, `dokter`, `keterangan`) VALUES
+(4, 4, 'Siloam', 'dr. Farrel', 'sakti help...');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -180,6 +221,12 @@ ALTER TABLE `photo`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `riwayat`
+--
+ALTER TABLE `riwayat`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -193,7 +240,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `dokter`
@@ -212,6 +259,12 @@ ALTER TABLE `mitra`
 --
 ALTER TABLE `photo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `riwayat`
+--
+ALTER TABLE `riwayat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`
