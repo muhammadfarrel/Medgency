@@ -103,6 +103,23 @@ class  mitra extends CI_Controller {
         $data['mitra'] = $this->m_mitra->id_mitra($dat['nama'])->row_array();
         $this->load->view('mitra_profile', $data);
     }
+
+    public function show($id){
+        $data['mitra'] = $this->m_mitra->liat($id);
+        $this->load->view('edit_dokter', $data);
+    }
+
+    public function editt(){
+		$this->form_validation->set_rules("nama", "nama", 'required');
+		$this->form_validation->set_rules("waktu", "waktu", 'required');
+		$this->form_validation->set_rules("spesialis", "spesialis", 'required');
+		//conditon in form_validation, if user input form = false, then load page "tambah" again
+		if($this->form_validation->run()){
+			$this->m_mitra->update();
+			redirect('mitra/showDoctor', 'refresh');
+		}
+    }
+
     public function do_upload()
         {
             $img = $_FILES['img'];

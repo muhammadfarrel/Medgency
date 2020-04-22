@@ -54,5 +54,26 @@ class M_user extends CI_model
         $query = "UPDATE `user` SET `email` = '$email', `phonenumber` = '$phone', `address` = '$address' WHERE `user`.`id` = '$id'";
         $this->db->query($query);
     }
+    public function dataJson(){
+        return $this->db->get('about')->result();
+    }
+    public function history($id){
+        $query = "SELECT * FROM `riwayat` WHERE `id_user` = '$id'";
+        return $this->db->query($query)->result_array();
+    }
+    public function hapus_riwayat($id){
+        $query = "DELETE FROM `riwayat` WHERE `riwayat`.`id` = '$id'";
+        $this->db->query($query);
+    }
+    public function num(){
+        $data = $this->session->userdata('user');
+        $id = $data['id'];
+        $query = "SELECT * FROM `booking` WHERE `id_user` = '$id'";
+        return $this->db->query($query)->num_rows();
+    }
+    public function book($id){
+        $query = "SELECT `dokter`.`nama` AS `nama_dokter`, `mitra`.`nama` AS `nama_mitra` FROM `booking` INNER JOIN `mitra` ON `mitra`.`id`=`booking`.`id_mitra` INNER JOIN `dokter` ON `dokter`.`id`=`booking`.`id_dokter` WHERE `id_user`='$id'";
+        return $this->db->query($query)->row_array();
+    }
 }
 ?>

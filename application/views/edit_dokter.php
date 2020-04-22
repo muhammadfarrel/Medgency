@@ -43,11 +43,10 @@
       body{
           margin-left: 10%;
           margin-right: 10%;
-          margin-bottom: 50px;
       }
     </style>
 
-    <title>Home | Mitra</title>
+    <title>Edit Doctor | Mitra</title>
 </head>
 
 <body>
@@ -73,52 +72,44 @@
             </div>
         </div>
     </nav>
+
+<div class="container">
     <div class="row mt-3">
-        <div class="col md-6">
-            <form action="<?= site_url('mitra/cariDoctor') ?>" method="post">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Cari data Dokter ... " name="keyword_dokter">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="submit">Cari</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div class="row mt-5">
         <div class="col">
-            <h3 class="text-center">Daftar Dokter</h3>
-
-            <table class="table mt-5">
-                <thead>
-                    <tr>
-                        <th class="text-center" scope="col">Nama Dokter</th>
-                        <th class="text-center" scope="col">Spesialis</th>
-                        <th class="text-center" scope="col">Waktu</th>
-                        <th class="text-center" scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><?php foreach ($dokter as $dok) : ?>
-                        <td class="text-center"><?= $dok['nama']; ?></td>
-                        <td class="text-center"><?= $dok['spesialis']; ?></td>
-                        <td class="text-center"><?= $dok['waktu']; ?></td>
-                        <td class="text-center">
-                            <a href="<?= site_url(); ?>/mitra/hapusDokter/<?= $dok['id'] ?>" class="badge badge-danger float-center" onclick="return confirm('Apakah Dokter akan di delete ?');" ?>Hapus</a>
-                            <a style="color : black" href="<?= site_url(); ?>/mitra/show/<?= $dok['id'] ?>" class="badge badge-danger float-center" >Edit</a>
-                        </td>
-                    </tr>
-                    <?php endforeach ?>
-                </tbody>
-            </table>
-            <div class="row mt-3">
-                <div class="col md-6 text-center mt-5">
-                    <a href="http://localhost/Medgency/index.php/mitra/tambahDokter" class="btn btn-primary">Tambah Dokter</a>
+            <div class="card">
+                <div class="card-header text-center">
+                    Form Edit Data Dokter
+                </div>
+                <div class="card-body">
+                    <form action="<?= site_url('mitra/editt') ?>" method="post">
+                    <input type="text" class="form-control" id="nama" name="id" value="<?php echo $mitra['id'] ?>" hidden>
+                    <input type="text" class="form-control" id="nama" name="id_mitra" value="<?php echo $mitra['id_mitra'] ?>" hidden>
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $mitra['nama'] ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="nim">Waktu</label>
+                            <input type="text" class="form-control" id="nim" name="waktu" value="<?php echo $mitra['waktu'] ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="jurusan">Spesialis</label>
+                            <select class="form-control" id="jurusan" name="spesialis">
+                                <option value="Paru-paru">Paru-Paru</option>
+                                <option value="Jantung">Jantung</option>
+                                <option value="Anak & Kandungan">Anak & Kandungan</option>
+                                <option value="Gigi">Gigi</option>
+                                <option value="Penyakit dalam">Penyakit dalam</option>
+                                <option value="Gizi">Gizi</option>
+                                <option value="Mata">Mata</option>
+                                <option value="Kulit & Kelamin">Kulit & Kelamin</option>
+                            </select>
+                        </div>
+                        <button type="submit" name="tambah" class="btn btn-primary float-right">Edit</button>
+                    </form>
                 </div>
             </div>
 
         </div>
     </div>
 </div> 
-<body>

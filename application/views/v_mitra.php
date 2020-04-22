@@ -106,7 +106,7 @@
                 </thead>
                 <tbody>
                     <tr><?php foreach ($pasien as $pas) : ?>
-                        <td class="text-center"><?= $pas['username']; ?></td>
+                        <td class="text-center"><?= $pas['nama_user']; ?></td>
                         <td class="text-center"><?= $pas['phonenumber']; ?></td>
                         <td class="text-center"><?= $pas['keterangan']; ?></td>
                         <td class="text-center"><?= $pas['nama']; ?></td>

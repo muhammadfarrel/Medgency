@@ -63,10 +63,16 @@
                 <a class="nav-link" href="<?= site_url('user/home') ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="<?= site_url('user/liatprofile') ?>">View Profile</a>
+                <a class="nav-link" href="<?= site_url('user/liatprofile') ?>">Profile</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="<?= site_url('user/riwayat') ?>">Riwayat</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="<?= site_url('user/showBook') ?>">Your Booking</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="<?= site_url('user/aboutUs') ?>">About</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="<?= site_url('user/logout') ?>">Logout</a>

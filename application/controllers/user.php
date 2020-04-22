@@ -150,20 +150,14 @@ class  User extends CI_Controller {
 
 		}
 		else{
-			$this->m_user->tambahBooking();
-			redirect('user/home');
-		}
-	}
-
-	public function testbook(){
-		$this->form_validation->set_rules('keterangan','keterangan', 'required');
-
-		if($this->form_validation->run() == false){
-
-		}
-		else{
-			$this->m_user->tambahBooking();
-			redirect('user/home');
+			$i = $this->m_user->num();
+			if($i>0){
+				echo '<script>alert("Anda Sedang Booking dokter untuk konsultasi!");</script>';
+			}
+			else{
+				$this->m_user->tambahBooking();
+				redirect('user/home');
+			}
 		}
 	}
 
@@ -187,6 +181,44 @@ class  User extends CI_Controller {
 		$this->load->view('header');
 		$this->load->view('myprofile',$data);
 		$this->load->view('footer');
+	}
+	public function aboutUs()
+	{
+		$data['data'] = $this->m_user->dataJson();
+		$this->load->view('header');
+		$this->load->view('aboutus',$data);
+		$this->load->view('footer');
+	}
+	public function riwayat(){
+		$dataa = $this->session->userdata('user');
+		$data['riwayat'] = $this->m_user->history($dataa['id']);
+		$this->load->view('header');
+		$this->load->view('riwayat',$data);
+		// $this->load->view('footer');
+	}
+	public function hapusriwayat($id){
+		$this->m_user->hapus_riwayat($id);
+		$dataa = $this->session->userdata('user');
+		$data['riwayat'] = $this->m_user->history($dataa['id']);
+		$this->load->view('header');
+		$this->load->view('riwayat',$data);
+	}
+	public function showBook(){
+		$data = $this->session->userdata('user');
+		$dat = $this->m_user->book($data['id']);
+		$mitra = $dat['nama_mitra'];
+		$dokter = $dat['nama_dokter'];
+		if(empty($dat)){
+			echo '<script>alert("Anda sedang tidak membooking dokter, silahkan pesan");</script>';
+		}
+		else{
+			echo '<script>alert("Anda sedang Booking "'.$dokter.'" di "'.$mitra.'" ");</script>';
+			echo $dokter . " " . $mitra;
+		}
+		$this->load->view('header');
+		$this->load->view('v_home_user');
+		$this->load->view('footer');
+		// redirect('user/home');
 	}
 }
 ?>
