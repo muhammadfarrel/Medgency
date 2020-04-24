@@ -78,10 +78,10 @@
                 <img width="60%" class="img-fluid" alt="about-us-page" src="<?php echo base_url()?>assets/img/aboutus.svg" />	            
             </div>
             <div class="col-md-6">
-                <p>Butler's Wharf is an English historic building on the south bank of the River Thames, just east of London's Tower Bridge, now housing luxury flats and restaurants. Lying between the picturesque street Shad Thames and the Thames Path, it overlooks both the bridge and St Katharine Docks on the other side of the river. Butler's Wharf is also used as a term for the surrounding area.</p>
-                <p>Butler's Wharf is also used as a name for the surrounding area, otherwise called Shad Thames after the main local street.</p>
-                <p>Source: Wikipedia.org</p>
-                <p>This is a sample website, don't pay any attention to the contents.</p>
+                <p>Medgency merupakan perangkat lunak berbasis web yang memudahkan user mendapatkan layanan kesehatan karena terdapat beberapa tingkat penyakit yang membutuhkan penanganan yang cepat.</p>
+                <p>Maka dari itu kami membuat terobosan untuk memberikan pelayanan kesehatan yang cepat.</p>
+                <p>Target user dari Medgency adalah masyarakat yang membutuhkan layanan kesehatan.</p>
+                <p>Kami membuat medgency dikarenakan sistem penanganan pasien yang ada di rumah sakit atau klinik tidak efisien.</p>
             </div>
         </div>
     </div>

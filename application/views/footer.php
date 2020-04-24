@@ -34,7 +34,7 @@
                 <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
                     <h6 class="text-uppercase text-muted font-weight-bold mb-4">About</h6>
                     <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><a href="#" class="text-primary">About Us</a></li>
+                        <li class="mb-2"><a href="<?= site_url('user/aboutUs') ?>" class="text-primary">About Us</a></li>
                         <li class="mb-2"><a href="#" class="text-primary">Linkedin</a></li>
                         <li class="mb-2"><a href="#" class="text-primary">Instagram</a></li>
                     </ul>
@@ -42,8 +42,6 @@
                 <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
                     <h6 class="text-uppercase text-muted font-weight-bold mb-4">Company</h6>
                     <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><a href="#" class="text-primary">Login</a></li>
-                        <li class="mb-2"><a href="#" class="text-primary">Register</a></li>
                         <li class="mb-2"><a href="#" class="text-primary">Sitemap</a></li>
                         <li class="mb-2"><a href="#" class="text-primary">Our Products</a></li>
                     </ul>

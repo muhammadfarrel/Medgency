@@ -203,22 +203,31 @@ class  User extends CI_Controller {
 		$this->load->view('header');
 		$this->load->view('riwayat',$data);
 	}
-	public function showBook(){
-		$data = $this->session->userdata('user');
-		$dat = $this->m_user->book($data['id']);
-		$mitra = $dat['nama_mitra'];
-		$dokter = $dat['nama_dokter'];
-		if(empty($dat)){
-			echo '<script>alert("Anda sedang tidak membooking dokter, silahkan pesan");</script>';
-		}
-		else{
-			echo '<script>alert("Anda sedang Booking "'.$dokter.'" di "'.$mitra.'" ");</script>';
-			echo $dokter . " " . $mitra;
-		}
+	public function article()
+	{
+		$data['data'] = $this->m_user->dataArtikelJson();
 		$this->load->view('header');
-		$this->load->view('v_home_user');
+		$this->load->view('list_article',$data);
 		$this->load->view('footer');
-		// redirect('user/home');
+	}
+	public function articlePage()
+	{
+		$id = $this->uri->segment(3);
+		$data['data'] = $this->m_user->dataArtikel($id);
+		$this->load->view('header');
+		$this->load->view('articlepage',$data);
+		$this->load->view('footer');
+	}
+	public function getBooking(){
+		$data['booking'] = $this->m_user->getBook();
+		if(!empty($data)){
+			$this->load->view('header');
+			$this->load->view('showBook', $data);
+			// $this->load->view('footer');
+		}
+		// else{
+		// 	echo '<script>alert("Anda sedang tidak membooking dokter, silahkan pesan");</script>';
+		// }
 	}
 }
 ?>

@@ -69,7 +69,10 @@
                 <a class="nav-link" href="<?= site_url('user/riwayat') ?>">Riwayat</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="<?= site_url('user/showBook') ?>">Your Booking</a>
+                <a class="nav-link"  href="http://localhost/Medgency/index.php/user/getBooking">Your Booking</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="<?= site_url('user/article') ?>">Article</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="<?= site_url('user/aboutUs') ?>">About</a>
@@ -81,6 +84,7 @@
             </div>
         </div>
       </nav>
+      
       <!-- akhir navbar -->
 
     <!-- Optional JavaScript -->
