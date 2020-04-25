@@ -4,6 +4,8 @@
 	<title>registration page</title>
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">
 		*{
@@ -243,8 +245,9 @@
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
-           		   		<h5>Username</h5>
-           		   		<input type="text" class="input" name="username" required>
+           		   		<h5>Usernamee</h5>
+						<input type="text" class="input" name="username" id = "username" required>
+						<span id="username_result"></span>
            		   </div>
 				</div>
 				<div class="input-div one">
@@ -262,7 +265,7 @@
 					</div>
 					<div class="div">
 						 <h5>Email</h5>
-						 <input type="email" class="input" name="email" required>
+						 <input type="email" class="input" name="email" id = "email" required>
 				 	</div>
 			  	</div>   
            		<div class="input-div pass">
@@ -300,7 +303,7 @@
 			<img src="<?php echo base_url()?>assets/img/bg_su.svg">
 		</div>
     </div>
-	<script type="text/javascript">
+	<script>
 		const inputs = document.querySelectorAll(".input");
 
 		function addcl(){
@@ -319,6 +322,21 @@
 			input.addEventListener("focus", addcl);
 			input.addEventListener("blur", remcl);
 		});
+		// $(document).ready(function() {
+		// 	$('#username').change(function(){
+		// 		var username = $('#username').val();
+		// 		if(username != ''){
+		// 			$.ajax({
+		// 				url:"<?php site_url('user/check_username_ad') ?>",
+		// 				method:"POST",
+		// 				data:{username:username},
+		// 				success:function(data){
+		// 					$('#username_result').html(data);
+		// 				}
+		// 			})
+		// 		}
+		// 	})
+		// });
 	</script>
 </body>
 </html>

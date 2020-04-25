@@ -229,5 +229,13 @@ class  User extends CI_Controller {
 		// 	echo '<script>alert("Anda sedang tidak membooking dokter, silahkan pesan");</script>';
 		// }
 	}
+	public function check_username_ada(){
+		if($this->m_user->cari_id($_POST['username'])->num_rows()>0){
+			echo '<label class="text-danger"><span class ="glyphicon glyphicon-remove"></span>Username Already Used</label>';
+		}
+		else{
+			echo '<label class="text-success"><span class ="glyphicon glyphicon-ok"></span>Username Available</label>';
+		}
+	}
 }
 ?>

@@ -17,7 +17,7 @@
     <!-- style css nya -->
     <style type="text/css">
       #carousel-container{
-          margin-bottom: 50px;
+          margin-bottom: 35px;
       }
 
       /* carousel dekstop */
@@ -61,13 +61,13 @@
 
       .text-partners h1{
           margin-top: 70px;
-          font-size: 50px;
+          font-size: 40px;
       }
 
-      .text-aye h1{
-        margin-top : 9px;
-        font-size: 50px;
-        margin-bottom: 50px;
+      .text-aye h3{
+        margin-top : 0px;
+        font-size: 30px;
+        margin-bottom: 40px;
       }
 
       .partners-space{
@@ -150,7 +150,7 @@
     <?php $dat = $this->session->userdata('user');
           $data = $this->m_user->cari_id($dat['nama'])->row_array() ?>
     <div class="row justify-content-center text-aye">
-      <h1>Hi <span><?php echo $data['nama'] ?></span> Welcome to Medgency</h1>
+      <h3>Hi <span><?php echo $data['nama'] ?></span> Welcome to Medgency</h3>
     </div>
     <!-- container -->
     <div class="container">

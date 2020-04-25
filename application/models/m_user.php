@@ -88,5 +88,15 @@ class M_user extends CI_model
         $dat = $this->db->query($query)->row_array();
         return $dat;
     }
+    public function is_username($uname){
+        $this->db->where('username',$uname);
+        $query = $this->db->get("user");
+        if($query->num_rows()>0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
 ?>

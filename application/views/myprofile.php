@@ -71,7 +71,7 @@
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                                 </div>
                                 <div class="modal-body mx-3">
-                                    <form id="editForm" action="<?php site_url('user/editProfile') ?>" method="POST">
+                                    <form id="editForm" action="<?= site_url('user/editProfile') ?>" method="POST">
                                         <input type="text" name="id" value="<?= $dat['id'] ?>" hidden>
                                         <div class="form-group">
                                             <i class="fa fa-envelope info"></i>
