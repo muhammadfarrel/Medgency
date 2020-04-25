@@ -121,6 +121,7 @@ class  User extends CI_Controller {
 	public function showMitra_rs()
 	{
 		$data['mitra'] = $this->m_user->liatmitra_rs();
+		$data['nama'] = "Rumah sakit";
 		$this->load->view('header');
 		$this->load->view('show_mitra', $data);
 		$this->load->view('footer');
@@ -129,6 +130,7 @@ class  User extends CI_Controller {
 	public function showMitra_c()
 	{
 		$data['mitra'] = $this->m_user->liatmitra_c();
+		$data['nama'] = "Klinik";
 		$this->load->view('header');
 		$this->load->view('show_mitra', $data);
 		$this->load->view('footer');

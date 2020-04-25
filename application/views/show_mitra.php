@@ -32,7 +32,7 @@
 </head>
 <body>
     <div class="row justify-content-center text-partners" id = "texting">
-      <h1>Rumah Sakit</h1>
+      <h1><?php echo $nama ?></h1>
     </div>
     <div class="container">
         <div class="row justify-content-center">
