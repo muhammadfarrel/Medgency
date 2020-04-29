@@ -50,6 +50,7 @@ class  User extends CI_Controller {
 		
 		$this->form_validation->set_rules('username','Username', 'required');
 		$this->form_validation->set_rules('email','Email', 'required');
+		$this->form_validation->set_rules('name','name', 'required');
 		$this->form_validation->set_rules('password','Password', 'required');
 		$this->form_validation->set_rules('phonenumber','Phonenumber', 'required');
 		$this->form_validation->set_rules('address','Address', 'required|trim');
@@ -62,7 +63,7 @@ class  User extends CI_Controller {
 
 			$data = [
 				'username' => $this->input->post('username'),
-				'name' => $this->input->post('name'),
+				'nama' => $this->input->post('name'),
 				'email' => $this->input->post('email'),
 				'password' => $this->input->post('password'),
 				'phonenumber' => $this->input->post('phonenumber'),

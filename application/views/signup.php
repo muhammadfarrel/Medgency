@@ -245,7 +245,7 @@
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
-           		   		<h5>Usernamee</h5>
+           		   		<h5>Username</h5>
 						<input type="text" class="input" name="username" id = "username" required>
 						<span id="username_result"></span>
            		   </div>
