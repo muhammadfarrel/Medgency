@@ -51,7 +51,7 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" id = "navbarr">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" id = "navbarr">
         <div class="container">
             <a class="navbar-brand" href="#">MedGency</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,6 +64,9 @@
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="http://localhost/Medgency/index.php/mitra/showDoctor">Show Dokter</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="<?= site_url('mitra/editmitra') ?>">Edit Mitra</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="<?= site_url('mitra/logout') ?>">Logout</a>

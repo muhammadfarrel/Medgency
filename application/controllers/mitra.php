@@ -113,10 +113,25 @@ class  mitra extends CI_Controller {
 		$this->form_validation->set_rules("nama", "nama", 'required');
 		$this->form_validation->set_rules("waktu", "waktu", 'required');
 		$this->form_validation->set_rules("spesialis", "spesialis", 'required');
-		//conditon in form_validation, if user input form = false, then load page "tambah" again
 		if($this->form_validation->run()){
 			$this->m_mitra->update();
 			redirect('mitra/showDoctor', 'refresh');
+		}
+    }
+
+    public function editmitra(){
+        $dat = $this->session->userdata('mitra');
+        $data['mitra'] = $this->m_mitra->tampil($dat['id']);
+        $this->load->view('form_edit_mitra',$data);
+    }
+
+    public function edit_mitra(){
+        $this->form_validation->set_rules("namamitra", "namamitra", 'required');
+		$this->form_validation->set_rules("waktu", "waktu", 'required');
+		$this->form_validation->set_rules("alamat", "alamat", 'required');
+		if($this->form_validation->run() == true){
+			$this->m_mitra->update_mitra();
+			redirect('mitra/index', 'refresh');
 		}
     }
 
@@ -141,5 +156,5 @@ class  mitra extends CI_Controller {
 			            redirect('mitra/profile');
                 }
         }
-}
+    }
 ?>

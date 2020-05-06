@@ -96,5 +96,20 @@ class M_mitra extends CI_model
 		];
 		$this->db->insert('photo', $data);
     }
+
+    public function tampil($id){
+        $query = "SELECT * FROM `mitra` WHERE `id` = '$id'";
+        return $this->db->query($query)->row_array();
+    }
+
+    public function update_mitra(){
+        $data = $this->session->userdata('mitra');
+        $dat = $data['id'];
+        $nama = $this->input->post('namamitra',true);
+        $alamat = $this->input->post('alamat', true);
+        $waktu = $this->input->post('waktu', true);
+        $query = "UPDATE `mitra` SET `nama` = '$nama', `address` = '$alamat', `waktu` = '$waktu' WHERE `mitra`.`id` = '$dat'";
+        $this->db->query($query);
+    }
 }
 ?>
