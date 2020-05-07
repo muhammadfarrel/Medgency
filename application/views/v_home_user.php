@@ -202,7 +202,7 @@
 
       <div class="row partners-space">
         <div class="col-lg-6">
-          <img src="<?php echo base_url()?>assets/img/klinik.jpg" alt="clinic" class="img-fluid">
+          <img src="<?php echo base_url()?>assets/img/clinic.png" alt="clinic" class="img-fluid">
         </div>
         <div class="col-lg-5">
           <h3>CLINIC</h3>

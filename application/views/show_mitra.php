@@ -7,10 +7,10 @@
 
     <title>Mitra</title>
     <style type="text/css">
-        /* .container{
-            margin-top: 8%;
-        } */
-        #card{
+        #oy{
+            margin-top: 3%;
+        }
+        #texting{
            margin-top: 20px; 
         }
         .inner{
@@ -34,7 +34,7 @@
     <div class="row justify-content-center text-partners" id = "texting">
       <h1><?php echo $nama ?></h1>
     </div>
-    <div class="container">
+    <div class="container" id = "oy">
         <div class="row justify-content-center">
             <?php foreach ($mitra as $m): ?>
             <div class="col-md-4 mb-5" id = "card">
