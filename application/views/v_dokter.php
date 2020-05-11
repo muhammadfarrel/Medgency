@@ -91,6 +91,11 @@
     <div class="row mt-5">
         <div class="col">
             <h3 class="text-center">Daftar Dokter</h3>
+            <?php if (empty($dokter)) : ?>
+            <div class="alert alert-danger" role="alert">
+                Data tidak ditemukan
+            </div>
+            <?php endif; ?>
 
             <table class="table mt-5">
                 <thead>
