@@ -54,6 +54,14 @@
             margin-top: 15px;
             margin-bottom: 30px;
         }
+        #profile{
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+        }
+        #team{
+          padding-bottom: 20px;
+        }
     </style>
 
     <title>About Us</title>
@@ -112,7 +120,7 @@
         <!-- akhir info-panel -->
     </div>
 
-    <div class="container teams">
+    <div class="container teams" id="team">
         <div class="text-center" style="margin-bottom: 30px;">
             <h2>Meet the Team</h2>
         </div>
@@ -122,11 +130,11 @@
                 $n = $n + 1;
               }
         ?>
-        <div class="row">
+        <div class="row" style="padding-bottom: 10px; padding-left: 60px">
             <div class="col-md-6">
               <div class="row">
                 <div class="col-3 mb48">
-                  <img src="..." class="img-responsive img-circle shadow">
+                  <img src="<?php echo base_url()?>assets/img/farrel.jpg" id="profile" class="img-responsive rounded-circle shadow">
                 </div>
                 <div class="col-9 col-md-8 mb48">
                   <h4 class="mt0"><b><?= $dat[2]->nama?></b> • <?= $dat[2]->ket?></h4>
@@ -137,7 +145,7 @@
             <div class="col-md-6">
               <div class="row">
                 <div class="col-3 mb48">
-                  <img src="..." class="img-responsive img-circle shadow">
+                <img src="<?php echo base_url()?>assets/img/aziz.jpg" id="profile" class="img-responsive rounded-circle shadow">
                 </div>
                 <div class="col-9 col-md-8 mb48">
                   <h4 class="mt0"><b><?= $dat[1]->nama?></b> • <b><?= $dat[1]->ket?></h4>
@@ -146,11 +154,11 @@
               </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="padding-bottom: 10px; padding-left: 60px">
             <div class="col-md-6">
               <div class="row">
                 <div class="col-3 mb48">
-                  <img src="..." class="img-responsive img-circle shadow">
+                <img src="<?php echo base_url()?>assets/img/haris.jpg" id="profile" class="img-responsive rounded-circle shadow">
                 </div>
                 <div class="col-9 col-md-8 mb48">
                   <h4 class="mt0"><b><?= $dat[3]->nama?></b> • <?= $dat[3]->ket?></h4>
@@ -161,7 +169,7 @@
             <div class="col-md-6">
               <div class="row">
                 <div class="col-3 mb48">
-                  <img src="..." class="img-responsive img-circle shadow">
+                <img src="<?php echo base_url()?>assets/img/daffa.jpg" id="profile" class="img-responsive rounded-circle shadow">
                 </div>
                 <div class="col-9 col-md-8 mb48">
                   <h4 class="mt0"><b><?= $dat[4]->nama?></b> • <?= $dat[4]->ket?></h4>
@@ -170,15 +178,15 @@
               </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="padding-left: 60px">
             <div class="col-md-6">
               <div class="row">
                 <div class="col-3 mb48">
-                  <img src="..." class="img-responsive img-circle shadow">
+                <img src="<?php echo base_url()?>assets/img/huda.jpg" id="profile" class="img-responsive rounded-circle shadow">
                 </div>
                 <div class="col-9 col-md-8 mb48">
                   <h4 class="mt0"><b><?= $dat[5]->nama?></b> • <?= $dat[5]->ket?></h4>
-                  <p class="small"><?= $dat[5]->deskripsi?></p>
+                  <p class="small" ><?= $dat[5]->deskripsi?></p>
                 </div>
               </div>
             </div>

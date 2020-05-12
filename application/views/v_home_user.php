@@ -101,6 +101,7 @@
               margin-left: 130px;
           }
       }
+
     </style>
 
 
@@ -117,24 +118,24 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="http://placehold.it/900x350" class="d-block w-100" alt="first-slide">
+          <img style ="height: 550px; width: 850px;"src="https://wallpaperplay.com/walls/full/6/8/e/13981.jpg" class="d-block w-100" alt="first-slide">
           <div class="carousel-caption d-none d-md-block">
             <h5>This is MedGency</h5>
             <p>Medical service you can rely on</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="http://placehold.it/900x350" class="d-block w-100" alt="second-slide">
+          <img style ="height: 550px; width: 850px;" src="https://www.expatica.com/app/uploads/sites/6/2019/11/Health-Insurance-Quotes-1920x1080.jpg" class="d-block w-100" alt="second-slide">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Corona terkini</h5>
-            <p>corona sedang menggila karena patrick</p>
+            <h5>It is health that is real wealth and not pieces of gold and silver</h5>
+            <p>Mahatma Gandhi</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="http://placehold.it/900x350" class="d-block w-100" alt="third-slide">
+          <img style ="height: 550px; width: 850px;" src="https://healthblog.uofmhealth.org/sites/consumer/files/2020-01/heart_with_stethoscope.jpg" class="d-block w-100" alt="third-slide">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Hai Kevin</h5>
-            <p>- Spongebob</p>
+            <h5>The good physician treats the disease; The great physician treats the patient who has the disease</h5>
+            <p>William Osler</p>
           </div>
         </div>
       </div>
@@ -202,7 +203,7 @@
 
       <div class="row partners-space">
         <div class="col-lg-6">
-          <img src="<?php echo base_url()?>assets/img/clinic.png" alt="clinic" class="img-fluid">
+          <img src="<?php echo base_url()?>assets/img/klinik.jpg" alt="clinic" class="img-fluid">
         </div>
         <div class="col-lg-5">
           <h3>CLINIC</h3>
