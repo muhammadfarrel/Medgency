@@ -142,7 +142,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
               <div class="row">
                 <div class="col-3 mb48">
                 <img src="<?php echo base_url()?>assets/img/aziz.jpg" id="profile" class="img-responsive rounded-circle shadow">
@@ -150,6 +150,17 @@
                 <div class="col-9 col-md-8 mb48">
                   <h4 class="mt0"><b><?= $dat[1]->nama?></b> • <b><?= $dat[1]->ket?></h4>
                   <p class="small"><?= $dat[1]->deskripsi?></p>
+                </div>
+              </div>
+            </div> -->
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-3 mb48">
+                <img src="<?php echo base_url()?>assets/img/huda.jpg" id="profile" class="img-responsive rounded-circle shadow">
+                </div>
+                <div class="col-9 col-md-8 mb48">
+                  <h4 class="mt0"><b><?= $dat[5]->nama?></b> • <?= $dat[5]->ket?></h4>
+                  <p class="small" ><?= $dat[5]->deskripsi?></p>
                 </div>
               </div>
             </div>
@@ -178,7 +189,7 @@
               </div>
             </div>
         </div>
-        <div class="row" style="padding-left: 60px">
+        <!-- <div class="row" style="padding-left: 60px">
             <div class="col-md-6">
               <div class="row">
                 <div class="col-3 mb48">
@@ -190,7 +201,7 @@
                 </div>
               </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <!-- Optional JavaScript -->

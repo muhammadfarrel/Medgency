@@ -69,7 +69,7 @@
                 <a class="nav-link" href="<?= site_url('user/riwayat') ?>">Riwayat</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link"  href="http://localhost/Medgency/index.php/user/getBooking">Your Booking</a>
+                <a class="nav-link"  href="http://localhost/Medgency/index.php/user/getBooking">Booking Anda</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="<?= site_url('user/article') ?>">Article</a>

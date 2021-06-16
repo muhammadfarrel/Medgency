@@ -25,6 +25,7 @@ class  User extends CI_Controller {
 		$this->load->model('m_mitra');
         //LOAD LIBRARY FORM VALIDATION
         $this->load->library('form_validation');
+		$this->load->library('unit_test');
 
     }
 	public function index()
@@ -32,7 +33,13 @@ class  User extends CI_Controller {
         // $this->load->model('m_user');
         // $dat = $this->session->userdata('user');
         // if(empty($dat)){
-            $this->load->view('login');
+		$this->load->view('login');
+
+		// $test = 1 + 1;
+		// $expected_result = 2;
+		// $test_name = 'login page';
+
+		// echo $this->unit->run($test, $expected_result, $test_name);
         // }
 		// $this->load->view('header');
 		// $this->load->view('v_home_user');
@@ -59,8 +66,6 @@ class  User extends CI_Controller {
 			$this->load->view('signup');
 		}
 		else{
-			//echo "Data berhasil ditambahkan";
-
 			$data = [
 				'username' => $this->input->post('username'),
 				'nama' => $this->input->post('name'),
@@ -95,9 +100,11 @@ class  User extends CI_Controller {
 		$cek = $this->m_user->login("user",$where)->num_rows();
         if($cek > 0){
 			$dat = $this->m_user->cari_id($username)->row_array();
+			$nam = $this->m_user->cari_nama($dat['id'])->row_array();
 			if($dat['role'] == 1){
 				$data = array(
 					'nama' => $username,
+					'nama_user' => $nam['nama'],
 					'id' => $dat['id']
 				);
 				$this->session->set_userdata('user',$data);
@@ -228,9 +235,6 @@ class  User extends CI_Controller {
 			$this->load->view('showBook', $data);
 			// $this->load->view('footer');
 		}
-		// else{
-		// 	echo '<script>alert("Anda sedang tidak membooking dokter, silahkan pesan");</script>';
-		// }
 	}
 	public function check_username_ada(){
 		if($this->m_user->cari_id($_POST['username'])->num_rows()>0){
@@ -238,6 +242,21 @@ class  User extends CI_Controller {
 		}
 		else{
 			echo '<label class="text-success"><span class ="glyphicon glyphicon-ok"></span>Username Available</label>';
+		}
+	}
+	public function hapus_book(){
+		// $this->m_user->edit($dat);
+		// $dataa = $this->session->userdata('user');
+		// $data['profile'] = $this->m_user->cari_id($dataa['nama'])->row_array();
+		// $this->load->view('header');
+		// $this->load->view('myprofile',$data);
+		// $this->load->view('footer');
+		$this->m_user->hapus_b();
+		$data['booking'] = $this->m_user->getBook();
+		if(!empty($data)){
+			$this->load->view('header');
+			$this->load->view('showBook', $data);
+			// $this->load->view('footer');
 		}
 	}
 }

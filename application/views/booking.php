@@ -49,7 +49,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="namapasien">Nama Pasien</label>
-                                <input type="text" class="form-control" id="namapasien" name="namapasien" value="<?= $data['nama'] ?>" disabled>
+                                <input type="text" class="form-control" id="namapasien" name="namapasien" value="<?= $data['nama_user'] ?>" disabled>
                                 <small class="form-text text-danger"></small>
                             </div>
                             <div class="form-group">

@@ -17,6 +17,9 @@ class M_user extends CI_model
     {
         return $this->db->get_where('user', ['username' => $username]);
     }
+    public function cari_nama($id){
+        return $this->db->get_where('user', ['id' => $id]);
+    }
     public function liatmitra_rs()
     {
         $query = "SELECT * FROM `mitra` where jenis LIKE 'rumah sakit'";
@@ -97,6 +100,12 @@ class M_user extends CI_model
         else{
             return false;
         }
+    }
+    public function hapus_b(){
+        $data = $this->session->userdata('user');
+        $id = $data['id'];
+        $query = "DELETE FROM `booking` WHERE `booking`.`id_user` = '$id'";
+        $this->db->query($query);
     }
 }
 ?>

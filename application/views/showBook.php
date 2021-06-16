@@ -13,7 +13,10 @@
         .card-header{
             font-size:large; 
         }
-
+        .btn{
+            background-color:#74b9ff;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -26,7 +29,7 @@
                         <strong>Data Booking</strong>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="<?= site_url('user/hapus_book') ?>" method="post">
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col">
@@ -43,7 +46,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="namapasien">Nama Pasien</label>
-                                <input type="text" class="form-control" id="namapasien" name="namapasien" value="<?= $data['nama'] ?>" disabled>
+                                <input type="text" class="form-control" id="namapasien" name="namapasien" value="<?= $data['nama_user'] ?>" disabled>
                                 <small class="form-text text-danger"></small>
                             </div>
                             <div class="form-group">
@@ -51,7 +54,7 @@
                                 <textarea class="form-control" name="keterangan" id="keterangan" rows="5" disabled><?php echo $booking['keterangan'] ?></textarea>
                                 <!-- <small class="form-text text-muted">masukan data keluhan perlu dicantumkan</small> -->
                             </div>
-                            
+                            <button type="submit" name="deletebook" class="btn btn-block">Hapus Booking</button>
                         </form>
                     </div>
                 </div>
